@@ -9,4 +9,4 @@ app.post("/", (req, res) => {
     res.send("This is a Post!")
 })
 
-app.listen(3000);
+app.listen(process.env.PORT);
