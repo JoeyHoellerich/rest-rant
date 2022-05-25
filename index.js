@@ -6,6 +6,7 @@ const express = require("express");
 // instantiate express package
 const app = express();
 
+// controller path to places
 app.use("/places", require("./controllers/places"));
 
 // get request for homepage
