@@ -1,0 +1,9 @@
+# User Stories!
+
+"As a ___ (user type) I need ______ (feature) so I can _________ (action)"
+
+# Color Scheme
+
+Primary : #68B684
+Secondary: #424242
+Highlight: #8EA4D2
