@@ -12,6 +12,12 @@ function home() {
             {/* Add the children elements -> Main */}
             <main>
                 <h1>HOME</h1>
+                <div>
+                    <img src="/images/food.png" alt="nacho ball baby" />
+                    <div>
+                        Photo by <a href="AUTHOR_LINK">Ron Possible</a> on <a href="DISNEY XD">Disney</a>
+                    </div>
+                </div>
                 <a href="/places">
                     <button className="btn-primary">Places Page</button>
                 </a>

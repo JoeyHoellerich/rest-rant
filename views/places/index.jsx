@@ -11,11 +11,17 @@ function index(data) {
     let palcesFormatted = data.places.map((place, index) => {
         return (
             // return html content (add unique key based on index)
-            <div key = {index}>
+            <div className="col-sm-6" key = {index}>
                 {/* place name */}
                 <h2>{place.name}</h2>
                 {/* image of place */}
+                <p className="text-left">
+                    {place.cuisines}
+                </p>
                 <img src = {place.pic} alt = {place.name}></img>
+                <p className="text-left">
+                    Located in {place.city}, {place.state}
+                </p>
             </div>
         )
     })
@@ -27,7 +33,9 @@ function index(data) {
                 {/* Places Title */}
                 <h1>PLACES</h1>
                 {/* Below Title is the html data returned from data source */}
-                {palcesFormatted}
+                <div className="row">
+                    {palcesFormatted}
+                </div>
             </main>
         </Def>
     )
