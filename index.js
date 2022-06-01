@@ -28,7 +28,8 @@ app.post("/", (req, res) => {
 
 // error 404 page (page not found)
 app.get("*", (req, res) => {
-    res.status(404).send("Happy Error 404");
+    // render page from ./views/error404
+    res.render("error404");
 })
 
 // start web server
