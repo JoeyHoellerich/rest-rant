@@ -11,14 +11,14 @@ function home() {
         <Def>
             {/* Add the children elements -> Main */}
             <main>
-                <h1>HOME</h1>
-                <div>
+                <h1>REST-Rant</h1>
+                <div className="homeImg" >
                     <img src="/images/food.png" alt="nacho ball baby" />
                     <div>
                         Photo by <a href="AUTHOR_LINK">Ron Possible</a> on <a href="DISNEY XD">Disney</a>
                     </div>
                 </div>
-                <a href="/places">
+                <a className = "homeBtn" href="/places">
                     <button className="btn-primary">Places Page</button>
                 </a>
             </main>

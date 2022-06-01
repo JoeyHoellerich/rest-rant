@@ -8,3 +8,24 @@ img {
     height: 400px;
     object-fit: cover;
 }
+
+/* Home Screen */
+.homeImg {
+    text-align: center;
+    /* box-shadow: ; */
+}
+
+.homeBtn {
+    display: block;
+    text-align: center;
+}
+
+.homeBtn > * {
+    margin: 10px;
+    text-align: center;
+    background-color: #68B684;
+    color: rgb(27, 27, 27);
+    width: 250px;
+    height: 75px;
+    font-size: 1.5em;
+}

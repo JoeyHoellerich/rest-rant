@@ -5,7 +5,7 @@ const router = require("express").Router();
 
 // GET response for /places
 router.get("/", (req, res) => {
-    // create variable to hold places
+    // create variable to hold places (MOCK DATA)
     let places = [
         {
         name: 'H-Thai-ML',
