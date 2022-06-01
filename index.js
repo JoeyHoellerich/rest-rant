@@ -7,10 +7,16 @@ const express = require("express");
 const app = express();
 
 // configure settings for express
+// the view folder can be found ./views
+app.set("views", __dirname + "/views");
 // view engine: jsx
 app.set("view engine", "jsx");
 // create react view engine (lang, callback to create engine)
 app.engine("jsx", require("express-react-views").createEngine());
+
+// show static file locations (CSS)
+// our static files will be located ./public 
+app.use(express.static("public"));
 
 // controller path to places
 app.use("/places", require("./controllers/places"));
@@ -19,11 +25,6 @@ app.use("/places", require("./controllers/places"));
 app.get("/", (req, res) => {
     // render page from ./views/home.jsx
     res.render("home");
-})
-
-// post request for homepage (TEST)
-app.post("/", (req, res) => {
-    res.send("This is a Post!")
 })
 
 // error 404 page (page not found)
