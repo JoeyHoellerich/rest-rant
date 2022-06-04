@@ -40,9 +40,9 @@ router.get("/:arrayIndex", (req, res) => {
 
 // POST response for /places
 router.post("/", (req, res) => {
+    console.log(req.body)
     res.send("POST /places");
 })
-
 
 // export the created router
 module.exports = router;

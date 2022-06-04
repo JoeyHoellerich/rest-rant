@@ -18,6 +18,10 @@ app.engine("jsx", require("express-react-views").createEngine());
 // our static files will be located ./public 
 app.use(express.static("public"));
 
+// data sent to server is encoded, need to let the server know so that it can decode it
+app.use(express.urlencoded({ extended: true }))
+
+
 // controller path to places
 app.use("/places", require("./controllers/places"));
 
