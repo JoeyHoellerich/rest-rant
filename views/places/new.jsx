@@ -30,7 +30,8 @@ function new_form() {
                     <div className="form-group">
                         <label htmlFor="cuisines">Cuisines</label>
                         <input className="form-control" id="cuisines" name="cuisines" required />
-                    </div>                      
+                    </div>
+                    <input type="submit" value = "Add Place" className="btn btn-primary"></input>                      
                 </form>
 
             </main>
