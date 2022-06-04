@@ -20,10 +20,6 @@ router.get("/", (req, res) => {
     res.render("places/index.jsx", {places});
 })
 
-router.get("/:arrayIndex", (req, res) => {
-    res.send(places[req.params.arrayIndex]);
-})
-
 // POST response for /places
 router.post('/', (req, res) => {
   if (!req.body.pic) {
@@ -53,6 +49,10 @@ router.get("/:id", (req, res) => {
   else {
     res.render("places/show", { place: places[id] });
   }
+})
+
+router.get("/:arrayIndex", (req, res) => {
+  res.send(places[req.params.arrayIndex]);
 })
   
 
