@@ -5,6 +5,8 @@ require("dotenv").config();
 const express = require("express");
 // instantiate express package
 const app = express();
+// require method-override
+const methodOverride = require("method-override");
 
 // configure settings for express
 // the view folder can be found ./views
@@ -20,6 +22,9 @@ app.use(express.static("public"));
 
 // data sent to server is encoded, need to let the server know so that it can decode it
 app.use(express.urlencoded({ extended: true }))
+
+// use method override for deleting data
+app.use(methodOverride("_method"));
 
 
 // controller path to places
