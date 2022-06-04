@@ -3,24 +3,10 @@ const { append } = require("express/lib/response");
 // instantiate a new router from express package
 const router = require("express").Router();
 
+
 //MOCK DATA
-// create variable to hold places (MOCK DATA)
-let places = [
-    {
-    name: 'H-Thai-ML',
-    city: 'Seattle',
-    state: 'WA',
-    cuisines: 'Thai, Pan-Asian',
-    pic: '/images/thaiFood.jpg'
-    }, 
-    {
-    name: 'Coding Cat Cafe',
-    city: 'Phoenix',
-    state: 'AZ',
-    cuisines: 'Coffee, Bakery',
-    pic: '/images/coffeeFood.jpg'
-    }
-]
+// get MOCK data from /models/places.js
+const places = require("../models/places.js")
 
 // NEW
 router.get("/new", (req, res) => {
@@ -39,10 +25,23 @@ router.get("/:arrayIndex", (req, res) => {
 })
 
 // POST response for /places
-router.post("/", (req, res) => {
-    console.log(req.body)
-    res.send("POST /places");
-})
+router.post('/', (req, res) => {
+    if (!req.body.pic) {
+      // Default image if one is not provided
+      req.body.pic = 'http://placekitten.com/400/400'
+    }
+    if (!req.body.city) {
+      req.body.city = 'Anytown'
+    }
+    if (!req.body.state) {
+      req.body.state = 'USA'
+    }
+
+    // add new data to places array
+    places.push(req.body)
+    res.redirect('/places')
+  })
+  
 
 // export the created router
 module.exports = router;
