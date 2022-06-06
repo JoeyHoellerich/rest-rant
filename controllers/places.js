@@ -8,6 +8,50 @@ const router = require("express").Router();
 // get MOCK data from /models/places.js
 const places = require("../models/places.js")
 
+//EDIT
+router.get("/:id/edit", (req, res) => {
+  let id = Number(req.params.id);
+  if (isNaN(id)){
+    res.render("error404");
+  }
+  else if (!places[id]){
+    res.render("error404");
+  }
+  else {
+    res.render("places/edit", {place: places[id], id: id});
+  }
+})
+
+router.put('/:id', (req, res) => {
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+      res.render('error404')
+  }
+  else if (!places[id]) {
+      res.render('error404')
+  }
+  else {
+      // if there is no picture url provided
+      if (!req.body.pic) {
+          // Default image if one is not provided
+          req.body.pic = 'http://placekitten.com/400/400'
+      }
+      // if there is no city provided
+      if (!req.body.city) {
+          req.body.city = 'Anytown'
+      }
+      // if there is no state provided
+      if (!req.body.state) {
+          req.body.state = 'USA'
+      }
+
+      // Save the new data into places[id]
+      places[id] = req.body
+      res.redirect(`/places/${id}`)
+  }
+})
+
+
 // NEW
 router.get("/new", (req, res) => {
     res.render("places/new")
@@ -66,11 +110,6 @@ router.get("/:id", (req, res) => {
      { place: places[id], id });
   }
 })
-
-router.get("/:arrayIndex", (req, res) => {
-  res.send(places[req.params.arrayIndex]);
-})
-  
 
 // export the created router
 module.exports = router;
