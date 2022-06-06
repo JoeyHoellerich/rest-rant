@@ -1,23 +1,34 @@
 body {
-    background-color: lightblue;
+    background-color: #8EA4D2;
     text-align: center;
 }
 
 main {
     margin-right: 20px;
     margin-left: 20px;
-    background-color: white;
+    background-color: #424242;
+    color: white;
+    border: 2px solid black;
+    border-top: none;
 }
 
 h1 {
     text-align: center;
-    color: cornflowerblue;
+    color: #68B684;
 }
 
 img {
     width: 600px;
     height: 400px;
     object-fit: cover;
+}
+
+a {
+    color:#68B684;
+}
+
+a:hover {
+    color:#8EA4D2;
 }
 
 /* Home Screen */
@@ -41,10 +52,23 @@ img {
     font-size: 1.5em;
 }
 
+.btn-primary {
+    border: 1px solid black;
+    background-color: #68B684;
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: #8EA4D2;
+    color: #424242;
+    border: 1px solid black;
+}
+
 /* NAVBAR */
 nav {
-    background-color: cornflowerblue;
+    background-color: #68B684;
     padding: 10px;
+    border-bottom: 2px solid black;
 }
 
 nav ul {
@@ -63,6 +87,13 @@ nav a {
 }
 
 nav a:hover {
-    color: pink;
+    color: #424242;
     text-decoration: none;
 }
+
+/* BUTTONS */
+.btn {
+    margin: 5px;
+}
+
+
