@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
   // create a new document in the database using the Place Schema
   // pass in the request body key-value pairs
   db.Place.create(req.body)
-  // after new data is created, redirect the user to the url.com/places page (may need to change to "/")
+  // after new data is created, redirect the user to the url.com/places page
     .then(() => res.redirect("/places"))
     // if there is an error adding data to database
     .catch(error => {
@@ -45,8 +45,16 @@ router.get('/new', (req, res) => {
 
 // READ
 router.get('/:id', (req, res) => {
-  res.send('GET /places/:id stub')
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/show', { place })
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
 })
+
 
 // UPDATE
 router.put('/:id', (req, res) => {

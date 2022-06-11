@@ -8,13 +8,13 @@ const Def = require("../default.jsx");
 // pass in places data
 function index(data) {
     // map through the passed in data (place data = {name, city, state, cuisines, pic})
-    let placesFormatted = data.places.map((place, index) => {
+    let placesFormatted = data.places.map((place) => {
         return (
             // return html content (add unique key based on index)
-            <div className="col-sm-6" key = {index}>
+            <div className="col-sm-6" key = {place.id}>
                 {/* place name */}
                 <h2>
-                    <a href={`/places/${index}`}>
+                    <a href={`/places/${place.id}`}>
                         {place.name}
                     </a>    
                 </h2>

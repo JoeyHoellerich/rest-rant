@@ -1,14 +1,12 @@
 // Create Schema for Places
 const mongoose = require("mongoose");
 
-const defaultImg = "https://res.cloudinary.com/dtpgi0zck/image/upload/s--ObAKLSo7--/c_fill,h_580,w_860/v1/EducationHub/photos/sonoran-desert.jpg"
-
 // define a new schema called placeSchema
 const placeShcema = new mongoose.Schema({
     // name of resturant
     name: {type: String, required: true},
     // url to photo 
-    pic: {type: String, default: defaultImg},
+    pic: {type: String, default: "https://res.cloudinary.com/dtpgi0zck/image/upload/s--ObAKLSo7--/c_fill,h_580,w_860/v1/EducationHub/photos/sonoran-desert.jpg"},
     // list of foods that are served
     cuisines: {type: String, required: true},
     // city the place is located
