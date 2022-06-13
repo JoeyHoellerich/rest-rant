@@ -24,6 +24,17 @@ router.get('/', (req, res) => {
 
 // how we send the database new data
 router.post('/', (req, res) => {
+  // if items are left empty, set them to undefined
+  if (!req.body.pic){
+    req.body.pic = undefined
+  }
+  if (!req.body.city){
+    req.body.city = undefined
+  }
+  if (!req.body.state){
+    req.body.state = undefined
+  }
+
   // create a new document in the database using the Place Schema
   // pass in the request body key-value pairs
   db.Place.create(req.body)

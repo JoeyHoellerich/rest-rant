@@ -27,6 +27,10 @@ function edit_form (data) {
                         <label htmlFor="cuisines">Cuisines</label>
                         <input className="form-control" id="cuisines" name="cuisines" value={data.place.cuisines} required />
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="founded">Founded</label>
+                        <input type = "number" className="form-control" id="founded" name="founded" value={data.place.founded} />
+                    </div>
                     <input type="submit" value = "Update Place" className="btn btn-primary"></input>                      
                 </form>
 

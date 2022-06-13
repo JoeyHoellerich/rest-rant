@@ -1,3 +1,6 @@
+// get variables from .env file (PORT, URI)
+require("dotenv").config();
+
 // Connecting to Mongoose
 const mongoose = require("mongoose");
 
