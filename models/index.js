@@ -12,3 +12,4 @@ mongoose.connect(process.env.MONGO_URI, {
 // Eventually we will have more than one Schema to export, so we want to export each item separetely
 // The first export is the Schema defined in ./places.js (model for place data)
 module.exports.Place = require("./places.js")
+module.exports.Comment = require("./comment.js")

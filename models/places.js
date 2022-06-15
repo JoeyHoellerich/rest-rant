@@ -14,7 +14,12 @@ const placeShcema = new mongoose.Schema({
     // state the place is located
     state: {type: String, default: "USA"},
     // year the place was founded
-    founded: {type: Number}
+    founded: {
+        type: Number,
+        min: [1700],
+        max: [new Date().getFullYear() + 1]
+    },
+    comments: [{type: mongoose.Schema.Types.ObjectId, ref: "Comment"}]
 })
 
 // define an instance method that can be run on a specific document in the database
